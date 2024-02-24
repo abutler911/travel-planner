@@ -21,9 +21,12 @@ form.addEventListener("submit", (event) => {
     body: JSON.stringify(formData),
   })
     .then((response) => {
-      console.log(response);
-
-      // Potentially redirect user to a results page here
+      console.log("Full Response:", response); // Inspect the entire response object
+      if (response.ok) {
+        window.location.href = response.url;
+      } else {
+        console.error("Server Error:", response.status);
+      }
     })
     .catch((error) => {
       console.error("Error submitting form:", error);

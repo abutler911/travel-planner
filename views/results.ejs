@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Results</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather for your trip to <%= destination %></h1>
+
+      <h2>Current Conditions</h2>
+      <p>Temperature: <%= resultsData.weather.temperature %>°F</p>
+      <p>Conditions: <%= resultsData.weather.conditions %></p>
+
+      <h2>Daily Forecast</h2>
+      <div>
+        <% for(let forecast of resultsData.forecasts) { %> <% if (forecast.date)
+        { %>
+        <div class="forecast-item">
+          <h3><%= forecast.date.toDateString() %></h3>
+          <p>Temperature: <%= forecast.temperature %>°F</p>
+          <p>Conditions: <%= forecast.conditions %></p>
+        </div>
+        <% } %> <% } %>
+      </div>
+    </div>
+  </body>
+</html>

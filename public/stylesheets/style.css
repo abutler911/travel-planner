@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: "Arial", sans-serif;
   padding: 20px;
 }
 
@@ -10,4 +10,14 @@ body {
 .mt-3,
 .mt-4 {
   margin-top: 1rem;
+}
+
+.temp {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card {
+  margin-bottom: 20px;
+  border: 2px solid lightblue;
 }
