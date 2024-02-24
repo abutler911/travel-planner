@@ -8,23 +8,16 @@
   </head>
   <body>
     <div class="container">
-      <h1>Weather for your trip to <%= destination %></h1>
-
-      <h2>Current Conditions</h2>
-      <p>Temperature: <%= resultsData.weather.temperature %>°F</p>
-      <p>Conditions: <%= resultsData.weather.conditions %></p>
+      <h1>Weather Forecast for <%= destination %></h1>
 
       <h2>Daily Forecast</h2>
-      <div>
-        <% for(let forecast of resultsData.forecasts) { %> <% if (forecast.date)
-        { %>
-        <div class="forecast-item">
-          <h3><%= forecast.date.toDateString() %></h3>
-          <p>Temperature: <%= forecast.temperature %>°F</p>
-          <p>Conditions: <%= forecast.conditions %></p>
-        </div>
-        <% } %> <% } %>
+      <% resultsData.forecasts.forEach(forecast => { %>
+      <div class="forecast-item">
+        <h3><%= forecast.date %></h3>
+        <p>Temperature: <%= forecast.temperature %>°F</p>
+        <p>Conditions: <%= forecast.conditions %></p>
       </div>
+      <% }); %>
     </div>
   </body>
 </html>
